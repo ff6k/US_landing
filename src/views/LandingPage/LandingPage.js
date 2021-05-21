@@ -11,10 +11,8 @@ import { Carousel } from "react-responsive-carousel";
 
 // core components
 import Header from "components/Header/Header.js";
-// import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-// import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
@@ -23,9 +21,6 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import WatchSection from "./Sections/WatchSection.js";
 import WhySection from "./Sections/WhySection.js";
 import WhatSection from "./Sections/WhatSection.js";
-// import ProductSection from "./Sections/ProductSection.js";
-// import TeamSection from "./Sections/TeamSection.js";
-// import WorkSection from "./Sections/WorkSection.js";
 import HowSection from "./Sections/HowSection.js";
 
 import { UserContext } from "context";
@@ -57,7 +52,6 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        // rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
