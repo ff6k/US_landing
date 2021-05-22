@@ -17,6 +17,7 @@
     "react": "17.0.2",
     "react-datetime": "3.0.4",
     "react-dom": "17.0.2",
+    "react-items-carousel": "^2.8.0",
     "react-loader-spinner": "^4.0.0",
     "react-player": "^2.9.0",
     "react-responsive-carousel": "^3.2.18",

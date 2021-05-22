@@ -12,7 +12,8 @@ import { UserContext } from "context";
 const useStyles = makeStyles(styles);
 
 export default function WhySection() {
-  const { data } = useContext(UserContext);
+  const context = useContext(UserContext);
+  const { data } = context;
 
   const [tabArr, setTabArr] = useState([]);
 
@@ -28,6 +29,11 @@ export default function WhySection() {
     });
     setTabArr(tmp);
   }, []);
+
+  const onActive = (v) => {
+    context.setData({...data, selectedData: data.glb_state.how_section[v]})
+  }
+
   const classes = useStyles();
   return (
     <div className={classes.section}>
@@ -38,13 +44,13 @@ export default function WhySection() {
             <GridItem xs={12} sm={12} md={6}>
               <br />
               <br />
-              <CustomTabs plainTabs headerColor="primary" tabs={tabArr} />
+              <CustomTabs plainTabs headerColor="primary" tabs={tabArr} onActive={onActive} />
             </GridItem>
             <GridItem xs={12} sm={12} md={6}>
               <br />
               <br />
               <img
-                src={require("assets/img/ipad.png").default}
+                src={data.defaultAPI + data.selectedData.primary_tab_device_image.url}
                 style={{ backgroundSize: "contain", width: "100%" }}
               />
             </GridItem>

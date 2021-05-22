@@ -35,14 +35,17 @@ export default function LandingPage(props) {
   const { data } = useContext(UserContext);
   const [direction, setDirection] = useState("row");
 
+  const text_data = [
+    "A single platform for all your commerce needs, managed from one place.",
+    "All-in-one omnichannel ecommerce system powered with Realtime Data."
+  ]
+
   useEffect(() => {
-    console.log(window.innerWidth)
     detectDirection();
     window.addEventListener("resize", detectDirection());
   }, []);
 
   const detectDirection = () => {
-    console.log(window.innerWidth);
     if (window.innerWidth < 768) setDirection("column-reverse");
     else setDirection("row");
   };
@@ -67,8 +70,9 @@ export default function LandingPage(props) {
             showIndicators={false}
             showThumbs={false}
             showArrows={false}
+            infiniteLoop={true}
           >
-          {data.glb_state.Banner.map((obj, i) => (
+          {text_data.map((text, i) => (
               <GridContainer
                 direction={direction}
                 style={{ justifyContent: "center" }}
@@ -76,8 +80,7 @@ export default function LandingPage(props) {
               >
                 <GridItem xs={12} sm={7}>
                   <img
-                    // src={data.defaultAPI + obj.Image[0].url}
-                    src={require("assets/img/bg.png").default}
+                    src={data.defaultAPI + data.glb_state.Banner[0].Image[0].url}
                     width="100%"
                     height="100%"
                   />
@@ -88,7 +91,7 @@ export default function LandingPage(props) {
                   style={{ padding: 0, alignItems: "center", display: "flex" }}
                 >
                   <h4 className={classes.parallexRightTxt}>
-                    {obj.banner_text}
+                    {text}
                   </h4>
                 </GridItem>
               </GridContainer>

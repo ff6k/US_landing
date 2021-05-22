@@ -34,14 +34,14 @@ const howStyle = {
     borderRadius: "5px",
   },
   topimg: {
-    width: 500,
+    width: 600,
     height: 400,
     marginBottom: -200,
     zIndex: 1,
     "@media(max-width: 768px)": {
       width: 325,
-      height: 256,
-      marginBottom: -128,
+      height: 200,
+      marginBottom: -100,
     },
   },
   text: {
@@ -49,7 +49,7 @@ const howStyle = {
     fontWeight: "400",
     fontSize: 209,
     "@media(max-width: 768px)": {
-      fontSize: 140,
+      fontSize: 80,
     },
   },
   bottomCon: {
