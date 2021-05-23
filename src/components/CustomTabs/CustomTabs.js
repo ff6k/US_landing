@@ -58,6 +58,7 @@ export default function CustomTabs(props) {
             root: classes.tabsRoot,
             indicator: classes.displayNone,
           }}
+          inkBarStyle={{background: 'blue'}}
         >
           {tabs.map((prop, key) => {
             var icon = {};

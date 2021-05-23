@@ -13,15 +13,6 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 import { UserContext } from "context";
 
-// const string = [
-//   "Live KanBan Order management;",
-//   "Integrated with your Storefront, Mobile App and Sellers App",
-//   "Integrate with Marketplaces",
-//   "Live Kanban Delivery status management",
-//   "Integrated with your owned delivery partner and DHL",
-//   "Fulfilment management; Collection and Delivery"
-// ]
-
 const useStyles = makeStyles(styles);
 
 export default function SectionTabs() {

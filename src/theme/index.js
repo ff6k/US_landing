@@ -28,7 +28,7 @@ export const theme = createMuiTheme({
       fontWeight: 600
     },
     p:{ 
-      color: "#000", textAlign: "center" 
+      color: "#393939", textAlign: "center", fontSize: 23, fontWeight: 600 
     },
     palette: {
       primary: {

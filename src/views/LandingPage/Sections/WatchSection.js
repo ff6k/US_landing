@@ -37,7 +37,7 @@ export default function WatchSection() {
               className={classes.watchbtn}
             >
               <i style={{color: '#fff'}} className="fas fa-play" />
-              <span style={{color: '#fff'}}>Watch the demo</span>
+              <span style={{color: '#fff', fontSize:15}}>Watch the demo</span>
             </Button>
           </div>
         </GridItem>

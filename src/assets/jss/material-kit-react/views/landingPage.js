@@ -38,10 +38,10 @@ const landingPageStyle = {
     marginTop: 450,
     alignSelf: "center",
     color: "#000",
-    fontSize: "2rem",
+    fontSize: "26px",
     fontWeight: 400,
     "@media (max-width: 768px)": {
-      fontSize: "1.2rem",
+      fontSize: "17px",
       marginTop: 150,
     },
   }
