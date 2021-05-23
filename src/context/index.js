@@ -20,6 +20,7 @@ const Provider = ({ children }) => {
     defaultAPI: defaultAPI,
     glb_state: {},
     selectedData: {},
+    selectedPackage: 1
   });
   useEffect(() => {
     axios

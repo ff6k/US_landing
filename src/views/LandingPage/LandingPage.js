@@ -10,23 +10,27 @@ import { Carousel } from "react-responsive-carousel";
 // @material-ui/icons
 
 // core components
-import Header from "components/Header/Header.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Parallax from "components/Parallax/Parallax.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
+import Header from "components/Header/Header.js";
+import Footer from "components/Footer/Footer.js";
+
 // Sections for this page
 import WatchSection from "./Sections/WatchSection.js";
 import WhySection from "./Sections/WhySection.js";
 import WhatSection from "./Sections/WhatSection.js";
 import HowSection from "./Sections/HowSection.js";
+import PacksliderSection from "./Sections/PacksliderSection.js";
+import PackageSection from "./Sections/PackageSection.js";
+import ContactSection from "./Sections/ContactSection.js";
 
 import { UserContext } from "context";
 
 const dashboardRoutes = [];
-
 const useStyles = makeStyles(styles);
 
 export default function LandingPage(props) {
@@ -37,8 +41,8 @@ export default function LandingPage(props) {
 
   const text_data = [
     "A single platform for all your commerce needs, managed from one place.",
-    "All-in-one omnichannel ecommerce system powered with Realtime Data."
-  ]
+    "All-in-one omnichannel ecommerce system powered with Realtime Data.",
+  ];
 
   useEffect(() => {
     detectDirection();
@@ -51,7 +55,7 @@ export default function LandingPage(props) {
   };
 
   return (
-    <div>
+    <div style={{ maxWidth: "100vw" }}>
       <Header
         color="transparent"
         routes={dashboardRoutes}
@@ -72,7 +76,7 @@ export default function LandingPage(props) {
             showArrows={false}
             infiniteLoop={true}
           >
-          {text_data.map((text, i) => (
+            {text_data.map((text, i) => (
               <GridContainer
                 direction={direction}
                 style={{ justifyContent: "center" }}
@@ -80,7 +84,9 @@ export default function LandingPage(props) {
               >
                 <GridItem xs={12} sm={7}>
                   <img
-                    src={data.defaultAPI + data.glb_state.Banner[0].Image[0].url}
+                    src={
+                      data.defaultAPI + data.glb_state.Banner[0].Image[0].url
+                    }
                     width="100%"
                     height="100%"
                   />
@@ -90,13 +96,11 @@ export default function LandingPage(props) {
                   sm={5}
                   style={{ padding: 0, alignItems: "center", display: "flex" }}
                 >
-                  <h4 className={classes.parallexRightTxt}>
-                    {text}
-                  </h4>
+                  <h4 className={classes.parallexRightTxt}>{text}</h4>
                 </GridItem>
               </GridContainer>
-          ))}
-            </Carousel>
+            ))}
+          </Carousel>
         </div>
       </Parallax>
       <div>
@@ -104,7 +108,11 @@ export default function LandingPage(props) {
         <WhySection />
         <WhatSection />
         <HowSection />
+        <PacksliderSection />
+        <PackageSection />
+        <ContactSection />
       </div>
+      <Footer />
     </div>
   );
 }

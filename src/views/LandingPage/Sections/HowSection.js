@@ -7,8 +7,6 @@ import GridItem from "components/Grid/GridItem.js";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
-// import Typography from "@material-ui/core/Typography";
-
 import { UserContext } from "context";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/howStyle.js";

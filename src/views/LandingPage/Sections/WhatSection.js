@@ -10,7 +10,6 @@ import Grid from '@material-ui/core/Grid';
 import styles from "assets/jss/material-kit-react/views/componentsSections/tabsStyle.js";
 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import Typography from '@material-ui/core/Typography';
 
 import { UserContext } from "context";
 
@@ -66,7 +65,7 @@ export default function SectionTabs() {
                         <CheckCircleIcon style={{color: "#FFC700"}}/>
                       </Grid>
                       <Grid item xs={11}>
-                        <Typography>{s.fact}</Typography>
+                        <p>{s.fact}</p>
                       </Grid>
                     </Grid>
                     )

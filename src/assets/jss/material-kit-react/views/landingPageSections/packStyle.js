@@ -16,13 +16,11 @@ const howStyle = {
     color: "#999",
   },
   container: {
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
     height: 720,
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
-    backgroundColor: "#000",
+    backgroundColor: "#612EF2",
     "&:before": {
       background: "rgba(0, 0, 0, 0.9)",
     },
@@ -45,12 +43,10 @@ const howStyle = {
     },
   },
   text: {
-    color: "#fff",
-    fontWeight: "400",
-    fontSize: 209,
-    "@media(max-width: 768px)": {
-      fontSize: 80,
-    },
+    color: "#000",
+    fontWeight: "600",
+    fontSize: 32,
+    textAlign:'center',
     fontFamily: '"Work Sans", sans-serif'
   },
   bottomCon: {
