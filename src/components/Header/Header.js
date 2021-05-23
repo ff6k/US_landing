@@ -21,6 +21,7 @@ const useStyles = makeStyles(styles);
 export default function Header(props) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [flag, setFlag] = React.useState(false);
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
@@ -44,6 +45,7 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[changeColorOnScroll.color]);
+      setFlag(true)
     } else {
       document.body
         .getElementsByTagName("header")[0]
@@ -51,16 +53,17 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
+      setFlag(false)
     }
   };
-  const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
+  const { color, rightLinks, leftLinks, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
     [classes[color]]: color,
     [classes.absolute]: absolute,
     [classes.fixed]: fixed,
   });
-  const brandComponent = <Button className={classes.title}>{brand}</Button>;
+  const brandComponent = <Button className={classes.title}><img src={require("assets/img/icon/logo.svg").default} width="210px" height="36px"/></Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
@@ -71,7 +74,7 @@ export default function Header(props) {
               {leftLinks}
             </Hidden>
           ) : (
-            brandComponent
+            flag&&brandComponent
           )}
         </div>
         <Hidden smDown implementation="css">

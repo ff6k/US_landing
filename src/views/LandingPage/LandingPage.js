@@ -18,6 +18,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
+// import HeaderLinks from "components/Header/HeaderLinks.js";
 
 // Sections for this page
 import WatchSection from "./Sections/WatchSection.js";
@@ -59,6 +60,8 @@ export default function LandingPage(props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
+        brand={<img src={require("assets/img/icon/logo.svg").default} width="70%" height="70%"/>}
+        // rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
