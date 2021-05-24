@@ -37,6 +37,7 @@ const landingPageStyle = {
   parallexRightTxt: {
     marginTop: 450,
     alignSelf: "center",
+    textAlign: "left",
     color: "#000",
     fontSize: "26px",
     fontWeight: 400,
@@ -44,6 +45,9 @@ const landingPageStyle = {
       fontSize: "17px",
       marginTop: 150,
     },
+  },
+  bodyContainer:{
+    backgroundColor: "#eeeeee"
   }
 };
 

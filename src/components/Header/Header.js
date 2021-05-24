@@ -16,12 +16,15 @@ import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/material-kit-react/components/headerStyle.js";
 
+const whiteLogo = require("assets/img/icon/white_logo.svg").default;
+const blackLogo = require("assets/img/icon/logo.svg").default;
+
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
   const classes = useStyles();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [flag, setFlag] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(whiteLogo);
+  const [logo, setLogo] = React.useState(whiteLogo);
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
@@ -45,7 +48,7 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[changeColorOnScroll.color]);
-      setFlag(true)
+      setLogo(blackLogo);
     } else {
       document.body
         .getElementsByTagName("header")[0]
@@ -53,7 +56,7 @@ export default function Header(props) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
-      setFlag(false)
+      setLogo(whiteLogo);
     }
   };
   const { color, rightLinks, leftLinks, fixed, absolute } = props;
@@ -63,7 +66,7 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed,
   });
-  const brandComponent = <Button className={classes.title}><img src={require("assets/img/icon/logo.svg").default} width="210px" height="36px"/></Button>;
+  const brandComponent = <Button className={classes.title}><img src={logo} width="210px" height="36px"/></Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
@@ -74,7 +77,7 @@ export default function Header(props) {
               {leftLinks}
             </Hidden>
           ) : (
-            flag&&brandComponent
+            brandComponent
           )}
         </div>
         <Hidden smDown implementation="css">

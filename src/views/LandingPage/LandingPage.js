@@ -56,7 +56,7 @@ export default function LandingPage(props) {
   };
 
   return (
-    <div style={{ maxWidth: "100vw" }}>
+    <div className={classes.bodyContainer}>
       <Header
         color="transparent"
         routes={dashboardRoutes}

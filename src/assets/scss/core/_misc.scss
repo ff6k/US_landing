@@ -3,6 +3,7 @@ html * {
   -moz-osx-font-smoothing: grayscale;
 }
 body {
+  background-color: #eeeeee;
   font-size: 1rem;
 }
 body,
@@ -65,7 +66,8 @@ p {
   font-size: 20px;
   margin: 0 0 10px;
   color: #393939;
-  font-weight: 450
+  font-weight: 450;
+  text-align: left;
 }
 html {
   font-family: sans-serif;

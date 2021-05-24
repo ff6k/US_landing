@@ -2,7 +2,6 @@ import React from "react";
 // @material-ui/core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Typography from "@material-ui/core/Typography";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -21,18 +20,18 @@ export default function ContactSection() {
     <div className={classes.container}>
       <GridContainer justify="center">
         <GridItem xs={11}>
-          <Typography
+          <h4
             style={{ fontSize: "1.7rem", fontWeight: 600, textAlign: "center",margin: 'auto', maxWidth: 800 }}
           >
             {`If you want to discuss this furhter please book in a Zoom call with our specialist team.`}
-          </Typography>
+          </h4>
         </GridItem>
         <GridItem xs={10}>
-          <Typography
+          <h4
             style={{ fontSize: "1.0rem", textAlign: "center", padding: 20 }}
           >
             {`Opening hours 10am to 10pm UK time`}
-          </Typography>
+          </h4>
         </GridItem>
       </GridContainer>
     </div>
