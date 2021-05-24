@@ -19,11 +19,11 @@ export default function Step3() {
     <div style={{ display: "flex", flexDirection: "column" }}>
       <GridContainer  style={{ justifyContent: "center" }}>
         <GridItem xs={12}>
-          <p
+          <h4
             className={classes.text}
           >
             What sales channels do you currently use or want?
-          </p>
+          </h4>
         </GridItem>
       </GridContainer>
       <br />

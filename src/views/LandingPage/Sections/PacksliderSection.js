@@ -41,7 +41,7 @@ export default function PacksliderSection() {
                 >
                   <Step2 />
                 </div>
-                <p
+                <h4
                   className={classes.text}
                   style={{
                     margin: "-130px auto 150px auto",
@@ -55,7 +55,7 @@ export default function PacksliderSection() {
                   {`Select the options that are where you want your business to
                     be, at the end we will determine the right package for your
                     business.`}
-                </p>
+                </h4>
               </div>
             </Fade>
           )}

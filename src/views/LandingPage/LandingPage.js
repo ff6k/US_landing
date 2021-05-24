@@ -61,7 +61,6 @@ export default function LandingPage(props) {
         color="transparent"
         routes={dashboardRoutes}
         brand={<img src={require("assets/img/icon/logo.svg").default} width="70%" height="70%"/>}
-        // rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
@@ -82,7 +81,7 @@ export default function LandingPage(props) {
             {text_data.map((text, i) => (
               <GridContainer
                 direction={direction}
-                style={{ justifyContent: "center" }}
+                style={{ justifyContent: "space-between" }}
                 key={i}
               >
                 <GridItem xs={12} sm={7}>

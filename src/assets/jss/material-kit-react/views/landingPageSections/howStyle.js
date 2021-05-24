@@ -47,9 +47,9 @@ const howStyle = {
   text: {
     color: "#fff",
     fontWeight: "400",
-    fontSize: 209,
+    fontSize: 160,
     "@media(max-width: 768px)": {
-      fontSize: 80,
+      fontSize: 55,
     },
     fontFamily: '"Work Sans", sans-serif'
   },

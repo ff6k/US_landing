@@ -44,6 +44,7 @@ const landingPageStyle = {
     "@media (max-width: 768px)": {
       fontSize: "17px",
       marginTop: 150,
+      textAlign: "center",
     },
   },
   bodyContainer:{

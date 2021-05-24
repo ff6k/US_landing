@@ -25,9 +25,9 @@ export default function Step1() {
           justifyContent: "center",
         }}
       >
-        <p className={classes.text} style={{ textAlign: "center", color: "#fff" }}>
+        <h4 className={classes.text} style={{ textAlign: "center", color: "#fff" }}>
           {`Let us help you find the right package`}
-        </p>
+        </h4>
       </GridItem>
       <GridItem
         xs={12}

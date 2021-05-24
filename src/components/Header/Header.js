@@ -4,7 +4,7 @@ import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -15,9 +15,48 @@ import Drawer from "@material-ui/core/Drawer";
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/material-kit-react/components/headerStyle.js";
+import { purple } from "@material-ui/core/colors";
 
 const whiteLogo = require("assets/img/icon/white_logo.svg").default;
 const blackLogo = require("assets/img/icon/logo.svg").default;
+
+const UnActiveButton = withStyles(() => ({
+  root: {
+    paddingLeft: 30,
+    paddingRight: 30,
+    borderRadius: 30,
+    color: "#000",
+    backgroundColor: "#fff",
+    zIndex: 0,
+    "&:hover": {
+      backgroundColor: "#eeeeee",
+    },
+    "&:active": {
+      boxShadow: "none",
+      backgroundColor: "#fff",
+      borderColor: "#fff",
+    },
+  },
+}))(Button);
+
+const ActiveButton = withStyles((theme) => ({
+  root: {
+    zIndex: 1,
+    paddingLeft: 30,
+    paddingRight: 30,
+    borderRadius: 30,
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: "#612EF2",
+    "&:hover": {
+      backgroundColor: "#612EF2",
+    },
+    "&:active": {
+      boxShadow: "none",
+      backgroundColor: "##612EF2",
+      borderColor: "##612EF2",
+    },
+  },
+}))(Button);
 
 const useStyles = makeStyles(styles);
 
@@ -25,6 +64,9 @@ export default function Header(props) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(whiteLogo);
   const [logo, setLogo] = React.useState(whiteLogo);
+  const [active, setActive] = React.useState(true);
+  const [scrollFlag, setScrollFlg] = React.useState(false);
+
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
@@ -49,6 +91,7 @@ export default function Header(props) {
         .getElementsByTagName("header")[0]
         .classList.add(classes[changeColorOnScroll.color]);
       setLogo(blackLogo);
+      setScrollFlg(true);
     } else {
       document.body
         .getElementsByTagName("header")[0]
@@ -57,16 +100,21 @@ export default function Header(props) {
         .getElementsByTagName("header")[0]
         .classList.remove(classes[changeColorOnScroll.color]);
       setLogo(whiteLogo);
+      setScrollFlg(false);
     }
   };
-  const { color, rightLinks, leftLinks, fixed, absolute } = props;
+  const { color, leftLinks, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
     [classes[color]]: color,
     [classes.absolute]: absolute,
     [classes.fixed]: fixed,
   });
-  const brandComponent = <Button className={classes.title}><img src={logo} width="210px" height="36px"/></Button>;
+  const brandComponent = (
+    <Button className={classes.title}>
+      <img src={logo} width="210px" height="36px" />
+    </Button>
+  );
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
@@ -81,7 +129,46 @@ export default function Header(props) {
           )}
         </div>
         <Hidden smDown implementation="css">
-          {rightLinks}
+          {scrollFlag && (
+            <div>
+              {active ? (
+                <ActiveButton
+                  variant="contained"
+                  color="primary"
+                  style={{ paddingRight: 40 }}
+                >
+                  OverView
+                </ActiveButton>
+              ) : (
+                <UnActiveButton
+                  onClick={() => setActive(true)}
+                  variant="contained"
+                  color="primary"
+                  style={{ paddingRight: 40 }}
+                >
+                  OverView
+                </UnActiveButton>
+              )}
+              {!active ? (
+                <ActiveButton
+                  variant="contained"
+                  color="primary"
+                  style={{ marginLeft: -30, paddingLeft: 40 }}
+                >
+                  Demo
+                </ActiveButton>
+              ) : (
+                <UnActiveButton
+                  onClick={() => setActive(false)}
+                  variant="contained"
+                  color="primary"
+                  style={{ marginLeft: -30, paddingLeft: 40 }}
+                >
+                  Demo
+                </UnActiveButton>
+              )}
+            </div>
+          )}
         </Hidden>
         <Hidden mdUp>
           <IconButton
@@ -104,8 +191,44 @@ export default function Header(props) {
           onClose={handleDrawerToggle}
         >
           <div className={classes.appResponsive}>
-            {leftLinks}
-            {rightLinks}
+            <div>
+              {active ? (
+                <ActiveButton
+                  variant="contained"
+                  color="primary"
+                  style={{ paddingRight: 40 }}
+                >
+                  OverView
+                </ActiveButton>
+              ) : (
+                <UnActiveButton
+                  onClick={() => setActive(true)}
+                  variant="contained"
+                  color="primary"
+                  style={{ paddingRight: 40 }}
+                >
+                  OverView
+                </UnActiveButton>
+              )}
+              {!active ? (
+                <ActiveButton
+                  variant="contained"
+                  color="primary"
+                  style={{ marginLeft: -30, paddingLeft: 40 }}
+                >
+                  Demo
+                </ActiveButton>
+              ) : (
+                <UnActiveButton
+                  onClick={() => setActive(false)}
+                  variant="contained"
+                  color="primary"
+                  style={{ marginLeft: -30, paddingLeft: 40 }}
+                >
+                  Demo
+                </UnActiveButton>
+              )}
+            </div>
           </div>
         </Drawer>
       </Hidden>

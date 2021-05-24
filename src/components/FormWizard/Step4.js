@@ -19,11 +19,11 @@ export default function Step4() {
     <div style={{ display: "flex", flexDirection: "column" }}>
       <GridContainer style={{ justifyContent: "center" }}>
         <GridItem xs={12}>
-          <p
+          <h4
             className={classes.text}
           >
             Do you have a single brand, multi-store or franchise?
-          </p>
+          </h4>
         </GridItem>
       </GridContainer>
       <br /><br />

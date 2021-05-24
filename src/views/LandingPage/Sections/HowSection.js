@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
+import Fade from '@material-ui/core/Fade';
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
@@ -15,8 +16,23 @@ const useStyles = makeStyles(styles);
 
 export default function HowSection() {
   const { data } = useContext(UserContext);
-  console.log(data);
   const classes = useStyles();
+  const [i, setIndex] = useState(0);
+  const [flag, setFlag] = useState(true);
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+        setFlag(flag => !flag)
+    }, 1700);
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    if(flag)
+      setIndex(i => i + 1)
+  }, [flag])
+
   return (
     <div>
       <GridContainer justify="center">
@@ -35,11 +51,13 @@ export default function HowSection() {
                   display: "flex",
                 }}
               >
-                <h1 className={classes.text}>
-                  {data.glb_state.blackbackground_words.find(
-                    (ele) => ele.id == data.selectedData.id
-                  ).word}
-                </h1>
+              <Fade in={flag}>
+                <h4 className={classes.text}>
+                    {data.glb_state.blackbackground_words[i%data.glb_state.blackbackground_words.length].word}
+
+                  </h4>
+              </Fade>
+
               </GridItem>
             </GridContainer>
           </div>

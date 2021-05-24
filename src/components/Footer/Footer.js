@@ -184,9 +184,9 @@ export default function Footer(props) {
             </a>
           </Grid>
         </Grid>
-        <p className={customer.title} style={{ textAlign: "left", fontSize: 12, fontWeight:400 }}>
+        <h2 className={customer.title} style={{ textAlign: "center", fontSize: 12, fontWeight:400 }}>
           All rights reserved. Go! Market is a registered trademark.
-        </p>
+        </h2>
       </Grid>
     </footer>
   );
