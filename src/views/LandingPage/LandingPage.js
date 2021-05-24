@@ -112,7 +112,7 @@ export default function LandingPage(props) {
         <WhatSection />
         <HowSection />
         <PacksliderSection />
-        <PackageSection />
+        {data.selectedPackage != 6 && <PackageSection />}
         <ContactSection />
       </div>
       <Footer />
