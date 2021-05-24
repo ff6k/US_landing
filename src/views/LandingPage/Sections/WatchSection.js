@@ -55,9 +55,6 @@ export default function WatchSection() {
     <div>
       <GridContainer justify="center">
         <GridItem xs={12} style={{ padding: 0 }}>
-          {/* <IconButton color="primary" aria-label="upload picture" component="span">
-          <PhotoCamera />
-        </IconButton>  */}
           <div style={style}>
             {!flag && (
               <Fade in={true}>
@@ -68,8 +65,8 @@ export default function WatchSection() {
                     component="span"
                     style={{
                       position: "absolute",
-                      top: 20,
-                      right: 20,
+                      top: 5,
+                      right: 5,
                       zIndex: 10,
                     }}
                     onClick={() => setFlag((flag) => !flag)}
