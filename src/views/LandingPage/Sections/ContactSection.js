@@ -20,6 +20,7 @@ export default function ContactSection() {
     <div className={classes.container}>
       <GridContainer justify="center">
         <GridItem xs={11}>
+          <br/><br/>
           <h4
             style={{ fontSize: "1.7rem", fontWeight: 600, textAlign: "center",margin: 'auto', maxWidth: 800 }}
           >

@@ -93,7 +93,7 @@ export default function PacksliderSection() {
             <Fade in={data.selectedPackage == 6}>
               <div
                 className={classes.container}
-                style={{ backgroundColor: "#fff", height: 1000 }}
+                style={{ backgroundColor: "#fff", height: 1200 }}
               >
                 <Step6 />
               </div>

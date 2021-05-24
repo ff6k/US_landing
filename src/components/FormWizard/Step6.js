@@ -129,7 +129,6 @@ export default function Pricing() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg" component="main">
-      <br/><br/><br/><br/>
       <Typography variant="h5" bold color="textSecondary">
         We understand from your selection that you are a product based
         multi-store business, buying in from suppliers, wanting to rule the
